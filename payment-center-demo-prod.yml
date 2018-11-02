@@ -1,5 +1,5 @@
 server:
-  port: 42002
+  port: 20000
   tomcat:
     remote_ip_header: x-forwarded-for
     protocol_header: x-forwarded-proto
@@ -7,7 +7,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://admin:17358687797@ip1:40001/eureka/,http://admin:17358687797@ip2:40002/eureka/
+      defaultZone: http://admin:17358687797@ip1:10001/eureka/,http://admin:17358687797@ip2:10002/eureka/
   instance: 
     preferIpAddress: true # 注册服务时使用ip而非计算机名
 
