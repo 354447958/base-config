@@ -1,0 +1,82 @@
+#server:
+#  port: 20000
+#  tomcat:
+#    remote_ip_header: x-forwarded-for
+#    protocol_header: x-forwarded-proto
+#
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://admin:17358687797@ip1:10001/eureka/
+#  instance: 
+#    preferIpAddress: true ###注册服务时使用ip而非计算机名
+#
+#ribbon:                   #ribbon配置（Feign的实现基于Ribbon，因此此配置也适用）
+#  eager-load:
+#    enabled: true         ###开启Ribbon的饥饿加载模式，让RibbonClient提前加载，而非第一次调用时加载
+#  eureka:
+#    enabled: true         ###默认true
+#  ReadTimeout: 5000       ###全局请求超时，默认5000
+#  ConnectTimeout: 5000    ###全局连接超时，默认2000
+#
+#feign:
+#  hystrix:
+#    enabled: true         ###打开断路器
+#
+#hystrix:                  #断路器配置
+#  shareSecurityContext: true				#自动配置一个Hystrix兵法策略，会把securityContext从主线程传输到你使用的Hystrix command
+#  command:
+#    default:
+#      circuitBreaker:
+#        sleepWindowInMilliseconds: 10000	#触发断路的时间值，当该值设为5000时，则当触发circuit break后的5000毫秒内都会拒绝request，也就是5000毫秒后才会关闭circuit。默认5000
+#        forceClosed: true					#强制关闭熔断器，如果这个开关打开，circuit将一直关闭且忽略
+#      execution:
+#        isolation:
+#          strategy: SEMAPHORE				#隔离策略，默认是Thread，可选Thread｜Semaphore
+#          thread:
+#            timeoutInMilliseconds: 10000	#命令执行超时时间，默认1000ms
+#
+#management:               #集成消息总线/断路器监控需要
+#  endpoints:
+#    web:
+#      exposure:
+#        include: "*"
+#      cors:
+#        allowed-origins: "*"
+#        allowed-methods: "*"
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+#        include: bus-refresh
+#
+#spring:
+#  cloud:                  #集成消息总线需要
+#    bus:
+#      enabled: true
+#      trace:
+#        enabled: true
+#  rabbitmq:               #集成消息总线需要
+#    host: localhost
+#    port: 5672
+#    username: guest
+#    password: guest
+#  zipkin:                 #服务链路追踪
+#      base-url: http://ip1:9411
+#  datasource:             #持久层相关
+#    driver-class-name: com.mysql.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/base_demo?characterEncoding=utf8&useInformationSchema=true&useSSL=true
+#    username: root
+#    password: root
+#    hikari:
+#      maxLifetime: 1765000
+#      maximumPoolSize: 10
+#
+#mybatis-plus:             #持久层相关
+#  type-aliases-package: cn.wine.payment.demo.common.entity
+#  global-config:
+#    refresh: true         ###自动刷新Mapper的XML，更改后，无需重启（仅限测试环境使用）
+#    db-config:
+#      table-prefix:       ###表名前缀
+
+test: gggg
