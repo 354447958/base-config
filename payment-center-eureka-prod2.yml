@@ -1,0 +1,23 @@
+server:
+  port: 10002
+
+eureka:
+  instance:
+    hostname: ip2
+  server:
+    enableSelfPreservation: false	#可选:关闭自我保护
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl:
+      defaultZone: http://admin:17358687797@ip1:10001/eureka/
+
+#配置认证用户
+spring:
+  profiles: prod2
+  application:
+    name: payment-center-eureka
+  security:
+    user:
+      name: admin
+      password: 17358687797
