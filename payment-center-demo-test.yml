@@ -30,7 +30,7 @@ spring:
         enabled: true
   datasource:   # 持久层相关
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/base_demo?characterEncoding=utf8&useInformationSchema=true
+    url: jdbc:mysql://localhost:3306/base_demo?characterEncoding=utf8&useInformationSchema=true&useSSL=true
     username: root
     password: root
     hikari:
