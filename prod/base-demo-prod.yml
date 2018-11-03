@@ -7,7 +7,7 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://admin:17358687797@ip1:10001/eureka/
+      defaultZone: http://admin:17358687797@ip1:10001/eureka/,http://admin:17358687797@ip2:10002/eureka/
   instance: 
     preferIpAddress: true ###注册服务时使用ip而非计算机名
 
@@ -55,7 +55,7 @@ spring:
     password: root
     hikari:
       maxLifetime: 1765000
-      maximumPoolSize: 10
+      maximumPoolSize: 100
 
 mybatis:                  #持久层相关
   typeAliasesPackage: base.demo.common.entity
