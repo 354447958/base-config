@@ -1,5 +1,5 @@
 server:
-  port: 20000
+  port: 30000
   tomcat:
     remote_ip_header: x-forwarded-for
     protocol_header: x-forwarded-proto
