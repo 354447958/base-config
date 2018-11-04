@@ -58,6 +58,9 @@ spring:
     password: guest
   zipkin:                 #服务链路追踪
     base-url: http://ip1:9411
+  sleuth: 
+    sampler: 
+      percentage: 1       #sleuth搜集信息比率，默认0.1
   datasource:             #持久层相关
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/base_demo?characterEncoding=utf8&useInformationSchema=true&useSSL=true
