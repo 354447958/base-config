@@ -1,5 +1,5 @@
 server:
-  port: 20000
+  port: 30000
   tomcat:
     remote_ip_header: x-forwarded-for
     protocol_header: x-forwarded-proto
@@ -72,4 +72,4 @@ mybatis:                  #持久层相关
   configuration:
     mapUnderscoreToCamelCase: true
 
-test: 666
+test: 777
