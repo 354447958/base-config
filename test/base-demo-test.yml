@@ -72,4 +72,4 @@ mybatis:                  #持久层相关
   configuration:
     mapUnderscoreToCamelCase: true
 
-test: 555
+test: 666
