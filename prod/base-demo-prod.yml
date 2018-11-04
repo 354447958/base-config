@@ -56,9 +56,8 @@ spring:
     port: 5672
     username: guest
     password: guest
-  application:            #服务链路追踪
-    zipkin:
-      base-url: http://ip1:9411
+  zipkin:                 #服务链路追踪
+    base-url: http://ip1:9411
   datasource:             #持久层相关
     driver-class-name: com.mysql.jdbc.Driver
     url: jdbc:mysql://localhost:3306/base_demo?characterEncoding=utf8&useInformationSchema=true&useSSL=true
