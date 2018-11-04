@@ -36,7 +36,7 @@ hystrix:                  #断路器配置
           thread:
             timeoutInMilliseconds: 10000	#命令执行超时时间，默认1000ms
 
-management:               #断路器监控需要
+management:               #消息总线与断路器监控需要
   endpoints:
     web:
       exposure:
@@ -46,6 +46,16 @@ management:               #断路器监控需要
         allowed-methods: "*"
 
 spring:
+  cloud:                  #消息总线需要
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  rabbitmq:               #消息总线需要
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
   zipkin:                 #服务链路追踪
       base-url: http://ip1:9411
   datasource:             #持久层相关
