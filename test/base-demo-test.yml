@@ -70,7 +70,10 @@ spring:
       maxLifetime: 1765000
       maximumPoolSize: 10
 
-mybatis:                  #持久层相关
-  typeAliasesPackage: base.demo.common.entity
-  configuration:
-    mapUnderscoreToCamelCase: true
+mybatis-plus:             #持久层相关
+  type-aliases-package: base.demo.common.entity
+  global-config:
+    refresh: true         ###自动刷新Mapper的XML，更改后，无需重启（仅限测试环境使用）
+    db-config:
+      id-type: AUTO       ###主键类型（AUTO-数据库自增）
+      table-prefix:       ###表名前缀
